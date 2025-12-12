@@ -7,7 +7,7 @@ A backend service built with FastAPI and MongoDB for managing organizations in a
 
 ### High Level Diagram
 
-![High Level Design](../diag.png)
+![High Level Design](./diag.png)
 
 ### Design Choices
 - **FastAPI**: Chosen for high performance and automatic validation/docs.
