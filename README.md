@@ -58,3 +58,19 @@ python organization_service/tests/test_flow.py
 - `GET /org/get`: Get Org details.
 - `PUT /org/update`: Update Org details (Syncs/Renames collection).
 - `DELETE /org/delete`: Delete Org.
+
+## Deployment
+
+### Vercel Deployment
+This project is configured for Vercel.
+
+1.  **Fork/Push** this repository to GitHub.
+2.  **Import** the project in Vercel.
+3.  **Environment Variables**: You **MUST** set the following environment variable in Vercel Project Settings:
+    -   `MONGODB_URL`: Your MongoDB Atlas Connection String (e.g., `mongodb+srv://user:pass@cluster.mongodb.net/?retryWrites=true&w=majority`)
+4.  **Database**: Vercel does not host databases. You must use a cloud provider like **MongoDB Atlas** (Free Tier available).
+    -   Create a Cluster on MongoDB Atlas.
+    -   Get the connection string.
+    -   Allow Access from Anywhere (0.0.0.0/0) or Vercel IPs in Network Access.
+    -   Use that string for `MONGODB_URL`.
+
