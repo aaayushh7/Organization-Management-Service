@@ -107,10 +107,9 @@ async def update_organization(
     )
 
 @router.delete("/delete")
-async def delete_organization(organization_name: str, current_user: dict = Depends(get_current_admin), db: Database = Depends(get_database)):
+async def delete_organization(current_user: dict = Depends(get_current_admin), db: Database = Depends(get_database)):
     # Validate user is deleting their own org
-    if current_user["organization_name"] != organization_name:
-        raise HTTPException(status_code=403, detail="Not authorized to delete this organization")
+    organization_name = current_user["organization_name"]
         
     # Drop Collection
     col_name = current_user["organization_collection"]
